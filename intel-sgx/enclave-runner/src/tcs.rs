@@ -142,7 +142,6 @@ pub(crate) fn coenter<T: Tcs>(
                     sub $0x8, %rsp                   // align stack
                     push {}                          // push argument: run
 .weak __vdso_sgx_enter_enclave
-.type __vdso_sgx_enter_enclave, function
                     call __vdso_sgx_enter_enclave@PLT
                     add $0x10, %rsp                  // restore stack pointer
                 ",
